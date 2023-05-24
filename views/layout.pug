@@ -19,6 +19,21 @@ html
         input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search' name='term')
         button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
 
+    nav(aria-label='Page navigation example').d-flex.justify-content-center
+      ul.pagination
+        if currentPage > 1
+          li.page-item
+            a.page-link(href=`?page=${currentPage - 1}`) Previous
+
+        - var i = 1;
+        while i <= pagesCount
+          li.page-item
+            a.page-link(href=`?page=${i}`)= i++
+
+        if currentPage < pagesCount
+          li.page-item
+            a.page-link(href=`?page=${parseInt(currentPage) + 1}`) Next
+
     .container
       block content
 
