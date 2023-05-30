@@ -11,3 +11,9 @@
 .card {
     margin-bottom:20px;
 }
+
+/* If form label ends with an asterisk, it will be styled as required. */
+label:after {
+    content: " *";
+    color: red;
+}
